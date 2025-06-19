@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+html {
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+app-root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-personalized {
+  background-image: url(assets/img/background.webp);
+  background-size: cover;
+  background-position: center;
+}
+
+.scroll-hidden {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.scroll-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Opera */
+}
