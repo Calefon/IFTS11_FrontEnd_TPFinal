@@ -1,11 +1,11 @@
-<article class="bg-amber-200 w-full h-full flex flex-col justify-items-start rounded-sm">
-    <div id="titulo" class="text-lg font-bold mt-1 mb-2 p-1.5 ps-5">
+<article class="bg-amber-200 w-full h-full flex flex-col justify-items-start rounded-sm overflow-hidden scroll-hidden">
+    <div id="titulo" class="text-lg font-bold mt-1 mb-2 p-1.5 ps-5 text-pretty break-words whitespace-normal">
         {{sticky.titulo}}
     </div>
-    <div id="contenido" class="text-base ps-6 pe-2">
-        {{sticky.contenido}}
+    <div id="contenido" class="overflow-y-scroll h-3/4 text-pretty break-words text-base ps-6 pe-2 w-full whitespace-normal scroll-hidden">
+            {{sticky.contenido}}   
     </div>
-    <button (click)="clickDeleteHandler(sticky._id)" class="self-end mt-auto me-3 mb-2 hover:bg-red-500 hover:backdrop-blur-sm transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 w-10 h-10 rounded-3xl flex flex-col items-center justify-center">
+    <button (click)="clickDeleteHandler(sticky._id)" class="self-end mt-auto me-3 mb-2 hover:bg-red-500 hover:backdrop-blur-sm transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 w-10 h-10 rounded-full flex flex-col items-center justify-center">
        <i class="fa-solid fa-trash text-xl"></i>
     </button>
 </article>

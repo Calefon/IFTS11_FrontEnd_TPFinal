@@ -50,6 +50,9 @@ export class StickiesContainerComponent implements OnInit {
     if(!titulo || titulo.length == 0){
       alert("Debe indicar un título");
       return;
+    }else if( titulo.length > 100){
+      alert("Elija un título más corto (máx. 100 caracteres)");
+      return;
     }
     let contenido = prompt("Ingrese el contenido de la nueva nota");
     if(!contenido){
