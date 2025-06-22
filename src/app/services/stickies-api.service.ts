@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Sticky } from '../models/sticky.model';
+import { ISticky } from '../models/sticky.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +14,16 @@ export class StickiesApiService {
 
   getAllStickies(){
     let reqURL = this._stickiesApiURL + '/all';
-    return this._http.get<Sticky[]>(reqURL);
+    return this._http.get<ISticky[]>(reqURL);
   }
 
-  createNewSticky(newSticky : Sticky){
+  createNewSticky(newSticky : ISticky){
     let reqURL = this._stickiesApiURL + '/new';
-    return this._http.post<Sticky>(reqURL, newSticky);
+    return this._http.post<ISticky>(reqURL, newSticky);
   }
 
   deleteSticky(stickyId : string){
     let reqURL = `${this._stickiesApiURL}/new/${stickyId}`
-    return this._http.delete<Sticky>(reqURL);
+    return this._http.delete<ISticky>(reqURL);
   }
 }
