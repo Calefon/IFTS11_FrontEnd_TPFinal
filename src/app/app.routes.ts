@@ -7,7 +7,7 @@ export const routes: Routes = [
   },
   {
     path: 'sticky',
-    loadComponent: () => import('./features/stickies/stickies.component').then(m => m.StickiesComponent)
+    loadComponent: () => import('./features/stickies/container/stickies-container.component').then(m => m.StickiesContainerComponent)
   },
   {
     path: '**',
