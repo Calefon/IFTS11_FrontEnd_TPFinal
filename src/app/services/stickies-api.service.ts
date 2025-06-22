@@ -17,13 +17,13 @@ export class StickiesApiService {
     return this._http.get<ISticky[]>(reqURL);
   }
 
-  createNewSticky(newSticky : ISticky){
+  createNewSticky(newSticky : {titulo : string, contenido: string}){
     let reqURL = this._stickiesApiURL + '/new';
     return this._http.post<ISticky>(reqURL, newSticky);
   }
 
   deleteSticky(stickyId : string){
-    let reqURL = `${this._stickiesApiURL}/new/${stickyId}`
+    let reqURL = `${this._stickiesApiURL}/delete/${stickyId}`
     return this._http.delete<ISticky>(reqURL);
   }
 }

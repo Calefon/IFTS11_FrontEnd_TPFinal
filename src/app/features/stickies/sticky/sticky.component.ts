@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ISticky } from '../../../models/sticky.model';
 
 @Component({
   selector: 'app-sticky',
@@ -6,6 +7,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './sticky.component.html'
 })
 export class StickyComponent {
-  @Input() titulo: string = '';
-  @Input() contenido: string = '';
+  @Input() sticky: ISticky = <ISticky>{}
+  @Input() clickDeleteHandler: (id:string) => void = (id:string)=>{};
 }

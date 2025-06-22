@@ -16,11 +16,49 @@ export class StickiesContainerComponent implements OnInit {
   public isLoading : boolean = true;
 
   ngOnInit(): void {
+    this.getAllStickies();
+  }
+
+  //Necesario declararla asi para que funcione el pasarlo como Input a Sticky
+  public deleteSticky = (id : string):void => {
+
+    this._stickiesApiService.deleteSticky(id).subscribe(
+      {
+        next: (stickyBorrada) => {
+          console.info(`Nota borrada: ${JSON.stringify(stickyBorrada)}`);
+          this.getAllStickies();
+        },
+        error: error => console.error(error)
+      }
+    );
+  }
+
+  getAllStickies():void{
     this._stickiesApiService.getAllStickies().subscribe(
       {
         next: (stickies) => {
           this.stickyList = stickies;
           this.isLoading = false;
+        },
+        error: error => console.error(error)
+      }
+    );
+  }
+
+  createSticky(){
+    const titulo = prompt("Ingrese el título de la nueva nota");
+    if(!titulo || titulo.length == 0){
+      alert("Debe indicar un título");
+      return;
+    }
+    let contenido = prompt("Ingrese el contenido de la nueva nota");
+    if(!contenido){
+      contenido = "";
+    }
+    this._stickiesApiService.createNewSticky({titulo, contenido}).subscribe(
+      {
+        next: () => {
+          this.getAllStickies();
         },
         error: error => console.error(error)
       }
