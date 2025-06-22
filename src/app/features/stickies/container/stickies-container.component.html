@@ -1,0 +1,22 @@
+
+<section class="flex flex-col gap-4 w-full h-full overflow-hidden scroll-hidden overflow-y-scroll">
+  <section class="flex gap-2 items-center justify-center">
+    <i class="fa-solid fa-pen text-2xl"></i>
+    <h2 class="text-2xl font-bold">PENdiente</h2>
+  </section>
+  <section [ngClass]="{'flex flex-col items-center justify-center h-full' : isLoading, 'grid grid-cols-3 gap-4' : !isLoading}">
+    @for(sticky of stickyList; track sticky._id){
+      <app-sticky class="w-full min-h-56" [sticky]="sticky" [clickDeleteHandler]="deleteSticky"></app-sticky>
+    }
+    @empty{
+      <section class="flex gap-2 items-center justify-center">
+      <i class="text-4xl fa-solid fa-spinner fa-spin animate-spin me-1"></i>
+      <h4 class="text-2xl text-center">Cargando notas...</h4>
+      </section>
+    }
+    <div (click)="createSticky()" class="w-full min-h-56 max-h-72 bg-white/30 backdrop-blur-sm rounded-sm flex flex-col items-center justify-center hover:bg-amber-100 transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
+      <i class="fa-solid fa-plus text-6xl"></i>
+    </div>
+  </section>
+</section>
+
