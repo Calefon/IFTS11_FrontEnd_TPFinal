@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {
   TablePageService,
   CardList,
   CreateListRequest,
-} from './table-page.service';
+} from '../../services/table-page.service';
 import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({

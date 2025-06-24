@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -17,6 +17,7 @@ export interface CreateListRequest {
 })
 export class TablePageService {
   private baseUrl = 'http://127.0.0.1:8080/api/cards';
+  listsAmount = signal<number>(0);
 
   constructor(private http: HttpClient) { }
 

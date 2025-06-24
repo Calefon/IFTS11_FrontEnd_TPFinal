@@ -13,6 +13,14 @@
       "description": "Create and manage your sticky notes"
     }
   },
+  "home": {
+    "welcome": "Welcome to the application!",
+    "description": "Manage your lists and sticky notes easily from the menu.",
+    "amountLists1":"You currently have",
+    "amountLists2":"lists created.",
+    "amountNotes1":"You currently have",
+    "amountNotes2":"notes created."
+  },
   "table": {
     "add": "Add list",
     "edit": "Edit list",
