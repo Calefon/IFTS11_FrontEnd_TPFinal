@@ -1,7 +1,7 @@
 <nav class="flex flex-col items-center bg-[#bac5db] h-full rounded-2xl">
   <ul class="flex flex-col items-center justify-center gap-2 p-3">
     @for(option of menuOptions; track option.route){
-    <li>
+    <li class="w-full">
       <a
         [routerLink]="option.route"
         [routerLinkActive]="['bg-[#b1bdd6]']"
@@ -10,13 +10,34 @@
         <div class="flex flex-col">
           <div class="flex items-center gap-2">
             <i [class]="option.icon" class="text-white"></i>
-            <p class="text-xl font-bold text-white">{{ option.label }}</p>
+            <p class="text-xl font-bold text-white" [transloco]="option.label"></p>
           </div>
 
-          <p class="text-xm font-medium text-white">{{ option.sublabel }}</p>
+          <p class="text-xm font-medium text-white" [transloco]="option.sublabel"></p>
         </div>
       </a>
     </li>
     }
   </ul>
+
+  <div>
+    <button
+        class="flex items-center justify-center hover:cursor-pointer"
+        (click)="onToggleLanguage()"
+      >
+        @if(languageService.currentLang === 'en'){
+        <img
+          src="assets/svg/english.svg"
+          alt="english"
+          class="w-[2rem] transition-transform duration-300 ease-in-out"
+        />
+        } @else {
+        <img
+          src="assets/svg/spanish.svg"
+          alt="spanish"
+          class="w-[2rem] transition-transform duration-300 ease-in-out"
+        />
+        }
+      </button>
+  </div>
 </nav>

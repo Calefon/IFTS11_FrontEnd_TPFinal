@@ -20,7 +20,7 @@
                 @if(addingList) {
                   <span class="inline-block animate-spin mr-2">⟳</span>
                 }
-                Agregar lista
+                {{"table.add" | transloco}}
               </button>
               <button class="w-10 bg-white/40 hover:bg-white/60 font-bold rounded-lg transition">X</button>
             </div>
@@ -32,7 +32,7 @@
         <div class="flex-shrink-0 w-80 bg-white/20 backdrop-blur-lg rounded-2xl p-4 shadow-lg text-white">
           <div class="text-center">
             <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-2"></div>
-            <p>Cargando listas...</p>
+            <p>{{"table.loading" | transloco}}</p>
           </div>
         </div>
       }
@@ -42,8 +42,8 @@
         <div class="flex-shrink-0 w-80 bg-white/20 backdrop-blur-lg rounded-2xl p-4 shadow-lg text-white">
           <h2 class="text-xl font-bold mb-4 text-white/90">{{ list.title }}</h2>
           <div class="flex justify-evenly">
-            <button class="bg-blue-600 px-6 py-3 rounded-full hover:bg-blue-700 hover:cursor-pointer" (click)="updateList(list._id)">Edit list</button>
-            <button class="bg-red-600 px-6 py-3 rounded-full hover:bg-red-700 hover:cursor-pointer" (click)="deleteList(list._id)">Delete list</button>
+            <button class="bg-blue-600 px-6 py-3 rounded-full hover:bg-blue-700 hover:cursor-pointer" (click)="updateList(list._id)">{{"table.edit" | transloco}}</button>
+            <button class="bg-red-600 px-6 py-3 rounded-full hover:bg-red-700 hover:cursor-pointer" (click)="deleteList(list._id)">{{"table.delete" | transloco}}</button>
           </div>
         </div>
       }

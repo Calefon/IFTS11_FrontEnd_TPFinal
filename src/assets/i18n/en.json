@@ -1,0 +1,25 @@
+{
+  "menu": {
+    "home": {
+      "title": "Home",
+      "description": "Navigate to the home page of the application"
+    },
+    "table": {
+      "title": "Table",
+      "description": "View and manage your data in a table format"
+    },
+    "sticky": {
+      "title": "Sticky notes",
+      "description": "Create and manage your sticky notes"
+    }
+  },
+  "table": {
+    "add": "Add list",
+    "edit": "Edit list",
+    "delete": "Delete list",
+    "loading": "Loading lists..."
+  },
+  "sticky": {
+    "loading": "Loading notes..."
+  }
+}

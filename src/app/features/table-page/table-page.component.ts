@@ -6,10 +6,11 @@ import {
   CardList,
   CreateListRequest,
 } from './table-page.service';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-table-page-component',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, TranslocoModule],
   templateUrl: './table-page.component.html',
 })
 export default class TablePageComponentComponent implements OnInit {

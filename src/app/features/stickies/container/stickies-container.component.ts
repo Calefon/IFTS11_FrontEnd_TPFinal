@@ -3,10 +3,11 @@ import { StickiesApiService } from '../../../services/stickies-api.service';
 import { ISticky } from '../../../models/sticky.model';
 import { StickyComponent } from '../sticky/sticky.component';
 import { CommonModule } from '@angular/common';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-stickies-container',
-  imports: [StickyComponent, CommonModule],
+  imports: [StickyComponent, CommonModule, TranslocoModule],
   templateUrl: './stickies-container.component.html',
   styleUrl: './stickies-container.component.css'
 })

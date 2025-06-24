@@ -1,0 +1,25 @@
+{
+  "menu": {
+    "home": {
+      "title": "Inicio",
+      "description": "Navegar a la página principal de la aplicación"
+    },
+    "table": {
+      "title": "Tabla",
+      "description": "Ver y gestionar tus datos en formato de tabla"
+    },
+    "sticky": {
+      "title": "Notas adhesivas",
+      "description": "Crear y gestionar tus notas adhesivas"
+    }
+  },
+  "table": {
+    "add": "Agregar lista",
+    "edit": "Editar lista",
+    "delete": "Eliminar lista",
+    "loading": "Cargando listas..."
+  },
+  "sticky": {
+    "loading": "Cargando notas..."
+  }
+}
