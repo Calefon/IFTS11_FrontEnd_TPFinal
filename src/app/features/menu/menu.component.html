@@ -1,11 +1,11 @@
-<nav class="flex flex-col items-center bg-[#bac5db] h-full rounded-2xl">
+<nav class="flex flex-col items-center bg-[#bac5db] h-full rounded-2xl dark:bg-white/10">
   <ul class="flex flex-col items-center justify-center gap-2 p-3">
     @for(option of menuOptions; track option.route){
     <li class="w-full">
       <a
         [routerLink]="option.route"
-        [routerLinkActive]="['bg-[#b1bdd6]']"
-        class="w-full px-2 flex space-x-2 items-center py-3 no-underline rounded-2xl hover:bg-[#8c9bb2]"
+        [routerLinkActive]="['bg-white/20']"
+        class="w-full px-2 flex space-x-2 items-center py-3 no-underline rounded-2xl hover:bg-[#8c9bb2] dark:hover:bg-white/10"
       >
         <div class="flex flex-col">
           <div class="flex items-center gap-2">
@@ -20,7 +20,7 @@
     }
   </ul>
 
-  <div>
+  <div class="flex justify-evenly w-full">
     <button
         class="flex items-center justify-center hover:cursor-pointer"
         (click)="onToggleLanguage()"
@@ -29,13 +29,32 @@
         <img
           src="assets/svg/english.svg"
           alt="english"
-          class="w-[2rem] transition-transform duration-300 ease-in-out"
+          class="w-[4rem] transition-transform duration-300 ease-in-out"
         />
         } @else {
         <img
           src="assets/svg/spanish.svg"
           alt="spanish"
-          class="w-[2rem] transition-transform duration-300 ease-in-out"
+          class="w-[4rem] transition-transform duration-300 ease-in-out"
+        />
+        }
+      </button>
+
+      <button
+        (click)="onToggleTheme()"
+        class="flex items-center justify-center hover:cursor-pointer"
+      >
+        @if(themeService.darkMode()){
+        <img
+          src="assets/svg/dark-mode.svg"
+          alt="dark mode"
+          class="w-[3rem] transition-transform duration-300 ease-in-out"
+        />
+        } @else {
+        <img
+          src="assets/svg/light-mode.svg"
+          alt="light mode"
+          class="w-[3rem] transition-transform duration-300 ease-in-out"
         />
         }
       </button>
