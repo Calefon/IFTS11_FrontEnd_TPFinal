@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslocoModule } from '@jsverse/transloco';
 import { LanguageService } from '../../services/language.service';
+import { ThemeService } from '../../services/theme.service';
 
 interface MenuOption {
   label: string;
@@ -16,7 +17,7 @@ interface MenuOption {
   templateUrl: './menu.component.html',
 })
 export class MenuComponent {
-  // themeService = inject(ThemeService);
+  themeService = inject(ThemeService);
   languageService = inject(LanguageService);
 
   menuOptions: MenuOption[] = [
@@ -40,9 +41,9 @@ export class MenuComponent {
     },
   ];
 
-  // onToggleTheme(): void {
-  //   this.themeService.toggleTheme();
-  // }
+  onToggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
 
   onToggleLanguage() {
     this.languageService.onToggleLanguage();
