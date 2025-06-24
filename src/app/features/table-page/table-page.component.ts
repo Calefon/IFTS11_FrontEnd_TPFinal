@@ -1,6 +1,7 @@
 import { Component, computed, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import CardComponent from '../tasks/card/card.component';
 import {
   TablePageService,
   CardList,
@@ -10,7 +11,7 @@ import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-table-page-component',
-  imports: [FormsModule, CommonModule, TranslocoModule],
+  imports: [FormsModule, CommonModule, TranslocoModule, CardComponent],
   templateUrl: './table-page.component.html',
 })
 export default class TablePageComponentComponent implements OnInit {
