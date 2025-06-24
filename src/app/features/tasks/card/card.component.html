@@ -1,0 +1,23 @@
+<div class="flex flex-col gap-3">
+  @if (listCards.length === 0) {
+    <div>No hay cards</div>
+  }
+
+  @for (card of listCards; track card._id) {
+    <div class="bg-white/80 rounded-lg p-3 text-gray-800 font-medium shadow flex justify-between items-center">
+      <span>{{ card.title }}</span>
+      <button
+        (click)="deleteCard(listId, card._id!)"
+        class="text-red-500 hover:text-red-700 font-bold text-lg transition-colors"
+      >
+        ×
+      </button>
+    </div>
+  }
+  <boton-crear-component
+  [listId]="listId"
+  (cardCreated)="loadCards()"
+  class="relative">
+  </boton-crear-component>
+
+</div>

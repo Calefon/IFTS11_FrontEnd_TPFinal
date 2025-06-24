@@ -1,0 +1,42 @@
+<button (click)="openModal()" class="bg-white/80 text-gray-800 font-semibold rounded-lg py-2 hover:bg-white transition disabled:opacity-50 w-full">
+  + Nueva Tarea
+</button>
+
+@if (showModal) {
+  <div class="bg-white w-96 p-6 rounded-lg shadow-lg absolute top-0 left-0">
+  <!-- BOTÓN CERRAR -->
+  <button
+    (click)="closeModal()"
+    class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-xl"
+  >
+    ×
+  </button>
+
+  <!-- TÍTULO -->
+  <h2 class="text-xl font-bold mb-4 text-gray-800">Crear nueva card</h2>
+
+  <!-- INPUT TÍTULO -->
+  <input
+    [value]="title"
+    (input)="title = $any($event.target).value"
+    placeholder="Título"
+    class="w-full border border-gray-300 rounded p-2 mb-3"
+  />
+
+  <!-- INPUT DESCRIPCIÓN -->
+  <textarea
+    [value]="description"
+    (input)="description = $any($event.target).value"
+    placeholder="Descripción"
+    class="w-full border border-gray-300 rounded p-2 mb-4"
+  ></textarea>
+
+  <!-- BOTÓN CREAR -->
+  <button
+    (click)="createCard()"
+    class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 w-full"
+  >
+    Crear
+  </button>
+</div>
+}

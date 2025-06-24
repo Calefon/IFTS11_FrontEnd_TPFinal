@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TablePageService, CardList, CreateListRequest, } from './table-page.service';
+import CardComponent from '../tasks/card/card.component';
 
 @Component({
   selector: 'app-table-page-component',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule,CardComponent],
   templateUrl: './table-page.component.html',
 })
 export default class TablePageComponentComponent implements OnInit {
-  
+
   lists: CardList[] = [];
   newListTitle: string = '';
   newCardTitle: string = '';
@@ -40,7 +41,7 @@ export default class TablePageComponentComponent implements OnInit {
   addNewList() {
     console.log('addNewList called');
     console.log('newListTitle:', this.newListTitle);
-    
+
     if (this.newListTitle && this.newListTitle.trim()) {
       this.addingList = true;
       const request: CreateListRequest = {
