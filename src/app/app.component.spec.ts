@@ -14,16 +14,15 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'IFTS11FrontEnd' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('IFTS11FrontEnd');
-  });
-
-  it('should render title', () => {
+  it('should render the app structure', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, IFTS11FrontEnd');
+    
+    // Verificar que el componente se renderiza correctamente
+    expect(compiled.querySelector('div')).toBeTruthy();
+    expect(compiled.querySelector('app-menu-component')).toBeTruthy();
+    expect(compiled.querySelector('main')).toBeTruthy();
+    expect(compiled.querySelector('router-outlet')).toBeTruthy();
   });
 });

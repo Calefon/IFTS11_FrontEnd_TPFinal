@@ -2,35 +2,13 @@
   <div class="h-full w-full overflow-x-auto p-8">
     <div class="flex h-full gap-8 items-start">
 
-      <!-- Placeholder for adding a new list -->
-      <div class="flex-shrink-0 w-80">
-        <div class="bg-white/20 backdrop-blur-lg rounded-2xl p-4 shadow-lg text-white">
-          <input
-            [(ngModel)]="newListTitle"
-            placeholder="Titulo..."
-            class="text-xl font-bold mb-4 text-black/70 bg-transparent border-none outline-none focus:ring-0 p-0 w-full"
-          />
-           <input
-              type="text"
-              [(ngModel)]="newCardTitle"
-              placeholder="Introducir una tarea"
-              class="w-full bg-[#b1bdd6]  border-2 border-transparent focus:border-[#b1bdd6] focus:bg-white/40  placeholder:text-white/90 rounded-lg px-3 py-2 text-white/90 outline-none transition"
-            />
-            <div class="flex gap-2 mt-2">
-              <button
-                class="flex-grow bg-white/80 text-gray-800 font-semibold rounded-lg py-2 hover:bg-white transition disabled:opacity-50"
-                (click)="addNewList()"
-                [disabled]="addingList"
-              >
-                @if(addingList) {
-                  <span class="inline-block animate-spin mr-2">⟳</span>
-                }
-                Agregar tarjeta
-              </button>
-              <button class="w-10 bg-white/40 hover:bg-white/60 font-bold rounded-lg transition">X</button>
-            </div>
-        </div>
-      </div>
+      <!-- Componente para crear nueva lista -->
+      <app-list
+        [lists]="lists"
+        [loading]="loading"
+        [addingList]="addingList"
+        (createList)="onCreateList($event)"
+      ></app-list>
 
       <!-- Loading indicator -->
       @if(loading) {
@@ -42,54 +20,13 @@
         </div>
       }
 
-      <!-- Render each list as a column -->
+      <!-- Render each list -->
       @for(list of lists; track list._id) {
         <div class="flex-shrink-0 w-80 bg-white/20 backdrop-blur-lg rounded-2xl p-4 shadow-lg text-white">
           <h2 class="text-xl font-bold mb-4 text-white/90">{{ list.title }}</h2>
-
-          <!-- Cards in the list -->
-          <div class="flex flex-col gap-3">
-            @for(card of list.cards; track $index) {
-              <div class="bg-white/80 rounded-lg p-3 text-gray-800 font-medium shadow flex justify-between items-center">
-                <span>{{ card.title }}</span>
-                <button 
-                  (click)="deleteCard(list, card._id!)"
-                  class="text-red-500 hover:text-red-700 font-bold text-lg transition-colors"
-                  title="Eliminar tarjeta"
-                >
-                  ×
-                </button>
-              </div>
-            }
-          </div>
-
-          <!-- Add new card section -->
-          <div class="mt-4">
-            <input
-              type="text"
-              [(ngModel)]="list.newCardTitle"
-              (keypress)="onKeyPress($event, list)"
-              placeholder="Introducir una tarea"
-              class="w-full bg-white/30 border-2 border-transparent focus:border-white/50 focus:bg-white/40 placeholder:text-white/70 rounded-lg px-3 py-2 text-white/90 outline-none transition"
-            />
-            <div class="flex gap-2 mt-2">
-              <button
-                (click)="addCardToList(list)"
-                class="flex-grow bg-white/80 text-gray-800 font-semibold rounded-lg py-2 hover:bg-white transition disabled:opacity-50"
-                [disabled]="addingCard"
-              >
-                @if(addingCard) {
-                  <span class="inline-block animate-spin mr-2">⟳</span>
-                }
-                Agregar tarjeta
-              </button>
-              <button class="w-10 bg-white/40 hover:bg-white/60 font-bold rounded-lg transition">X</button>
-            </div>
-          </div>
+          <p class="text-white/70">Lista creada</p>
         </div>
       }
-
-      
 
     </div>
   </div>
