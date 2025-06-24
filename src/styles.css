@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@custom-variant dark (&:where(.dark, .dark *));
 
 html {
   width: 100vw;
@@ -21,9 +21,6 @@ app-root {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.bg-personalized {
   background-image: url(assets/img/background.webp);
   background-size: cover;
   background-position: center;

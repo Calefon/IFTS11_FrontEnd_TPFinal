@@ -3,35 +3,32 @@
 </button>
 
 @if (showModal) {
-  <div class="bg-white w-96 p-6 rounded-lg shadow-lg absolute top-0 left-0">
-  <!-- BOTÓN CERRAR -->
-  <button
-    (click)="closeModal()"
-    class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-xl"
-  >
-    ×
-  </button>
+  <div class="bg-white p-6 rounded-lg shadow-lg relative bottom-12">
 
-  <!-- TÍTULO -->
-  <h2 class="text-xl font-bold mb-4 text-gray-800">Crear nueva card</h2>
+  <div class="flex justify-between items-baseline">
+    <h2 class="text-xl font-bold mb-4 text-gray-800">Crear nueva card</h2>
+    <button
+      (click)="closeModal()"
+      class="text-gray-500 hover:text-red-600 text-xl"
+    >
+      ×
+    </button>
+  </div>
 
-  <!-- INPUT TÍTULO -->
   <input
     [value]="title"
     (input)="title = $any($event.target).value"
     placeholder="Título"
-    class="w-full border border-gray-300 rounded p-2 mb-3"
+    class="w-full border border-gray-300 rounded p-2 mb-3 placeholder-gray-500 text-black"
   />
 
-  <!-- INPUT DESCRIPCIÓN -->
   <textarea
     [value]="description"
     (input)="description = $any($event.target).value"
     placeholder="Descripción"
-    class="w-full border border-gray-300 rounded p-2 mb-4"
+    class="w-full border border-gray-300 rounded p-2 mb-4  placeholder-gray-500 text-black"
   ></textarea>
 
-  <!-- BOTÓN CREAR -->
   <button
     (click)="createCard()"
     class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 w-full"

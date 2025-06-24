@@ -1,0 +1,33 @@
+{
+  "menu": {
+    "home": {
+      "title": "Inicio",
+      "description": "Navegar a la página principal de la aplicación"
+    },
+    "table": {
+      "title": "Tabla",
+      "description": "Ver y gestionar tus datos en formato de tabla"
+    },
+    "sticky": {
+      "title": "Notas adhesivas",
+      "description": "Crear y gestionar tus notas adhesivas"
+    }
+  },
+  "home": {
+    "welcome": "¡Bienvenido a la aplicación!",
+    "description": "Gestiona tus listas y notas adhesivas fácilmente desde el menú.",
+    "amountLists1": "Actualmente tienes",
+    "amountLists2": "listas creadas.",
+    "amountNotes1": "Actualmente tienes",
+    "amountNotes2": "notas creadas."
+  },
+  "table": {
+    "add": "Agregar lista",
+    "edit": "Editar lista",
+    "delete": "Eliminar lista",
+    "loading": "Cargando listas..."
+  },
+  "sticky": {
+    "loading": "Cargando notas..."
+  }
+}

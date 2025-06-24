@@ -1,0 +1,33 @@
+{
+  "menu": {
+    "home": {
+      "title": "Home",
+      "description": "Navigate to the home page of the application"
+    },
+    "table": {
+      "title": "Table",
+      "description": "View and manage your data in a table format"
+    },
+    "sticky": {
+      "title": "Sticky notes",
+      "description": "Create and manage your sticky notes"
+    }
+  },
+  "home": {
+    "welcome": "Welcome to the application!",
+    "description": "Manage your lists and sticky notes easily from the menu.",
+    "amountLists1":"You currently have",
+    "amountLists2":"lists created.",
+    "amountNotes1":"You currently have",
+    "amountNotes2":"notes created."
+  },
+  "table": {
+    "add": "Add list",
+    "edit": "Edit list",
+    "delete": "Delete list",
+    "loading": "Loading lists..."
+  },
+  "sticky": {
+    "loading": "Loading notes..."
+  }
+}

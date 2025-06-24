@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { TranslocoModule } from '@jsverse/transloco';
+import { LanguageService } from '../../services/language.service';
+import { ThemeService } from '../../services/theme.service';
 
 interface MenuOption {
   label: string;
@@ -10,29 +13,39 @@ interface MenuOption {
 
 @Component({
   selector: 'app-menu-component',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, TranslocoModule],
   templateUrl: './menu.component.html',
 })
-
 export class MenuComponent {
+  themeService = inject(ThemeService);
+  languageService = inject(LanguageService);
+
   menuOptions: MenuOption[] = [
     {
-      label: 'Home',
-      sublabel: 'Navigate to the home page of the application',
+      label: 'menu.home.title',
+      sublabel: 'menu.home.description',
       route: '/home',
-      icon: 'fa-solid fa-house'
+      icon: 'fa-solid fa-house',
     },
     {
-      label: 'Table',
-      sublabel: 'View and manage your data in a table format',
+      label: 'menu.table.title',
+      sublabel: 'menu.table.description',
       route: '/table',
-      icon: 'fa-solid fa-table'
+      icon: 'fa-solid fa-table',
     },
     {
-      label: 'Sticky notes',
-      sublabel: 'Create and manage your sticky notes',
+      label: 'menu.sticky.title',
+      sublabel: 'menu.sticky.description',
       route: '/sticky',
-      icon: 'fa-solid fa-note-sticky'
-    }
+      icon: 'fa-solid fa-note-sticky',
+    },
   ];
+
+  onToggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
+
+  onToggleLanguage() {
+    this.languageService.onToggleLanguage();
+  }
 }
