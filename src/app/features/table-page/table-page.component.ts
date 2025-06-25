@@ -22,6 +22,8 @@ export default class TablePageComponentComponent implements OnInit {
   addingCard: boolean = false;
   addingList: boolean = false;
 
+  tableTitle = "table.tableTitle"
+
   constructor(private tablePageService: TablePageService) {}
 
   ngOnInit() {

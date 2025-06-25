@@ -1,6 +1,6 @@
 <div class="flex flex-col gap-3 m-2">
   @if (listCards.length === 0) {
-    <div>No hay cards</div>
+    <div>{{"table.cards.noCards" | transloco}}</div>
   }
 
   @for (card of listCards; track card._id) {

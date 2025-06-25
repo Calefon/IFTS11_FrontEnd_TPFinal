@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import ICard from '../../../models/card.model';
 import { CardApiService } from '../../../services/card-api.service';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'boton-crear-component',
+  imports: [TranslocoModule],
   templateUrl: './boton-crear-card.component.html',
   styleUrl: './boton-crear-card.component.css'
 })
@@ -14,6 +16,9 @@ export class BotonCrearCardComponent {
   showModal = false;
   title = '';
   description = '';
+
+  titlePlaceholder = 'table.cards.title';
+  descriptionPlaceholder = 'table.cards.description';
 
   constructor(private cardApiService: CardApiService) {}
 

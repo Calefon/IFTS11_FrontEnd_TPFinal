@@ -1,12 +1,12 @@
 <button (click)="openModal()" class="bg-white/80 text-gray-800 font-semibold rounded-lg py-2 hover:bg-white transition disabled:opacity-50 w-full">
-  + Nueva Tarea
+  {{"table.cards.add" | transloco}}
 </button>
 
 @if (showModal) {
   <div class="bg-white p-6 rounded-lg shadow-lg relative bottom-12">
 
   <div class="flex justify-between items-baseline">
-    <h2 class="text-xl font-bold mb-4 text-gray-800">Crear nueva card</h2>
+    <h2 class="text-xl font-bold mb-4 text-gray-800">{{"table.cards.create" | transloco }}</h2>
     <button
       (click)="closeModal()"
       class="text-gray-500 hover:text-red-600 text-xl"
@@ -18,14 +18,14 @@
   <input
     [value]="title"
     (input)="title = $any($event.target).value"
-    placeholder="Título"
+    [placeholder]="titlePlaceholder | transloco"
     class="w-full border border-gray-300 rounded p-2 mb-3 placeholder-gray-500 text-black"
   />
 
   <textarea
     [value]="description"
     (input)="description = $any($event.target).value"
-    placeholder="Descripción"
+    [placeholder]="descriptionPlaceholder | transloco"
     class="w-full border border-gray-300 rounded p-2 mb-4  placeholder-gray-500 text-black"
   ></textarea>
 
@@ -33,7 +33,7 @@
     (click)="createCard()"
     class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 w-full"
   >
-    Crear
+    {{"table.cards.create" | transloco}}
   </button>
 </div>
 }
