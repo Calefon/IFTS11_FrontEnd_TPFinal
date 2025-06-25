@@ -22,10 +22,18 @@
     "amountNotes2": "notas creadas."
   },
   "table": {
+    "tableTitle":"Titulo...",
     "add": "Agregar lista",
     "edit": "Editar lista",
     "delete": "Eliminar lista",
-    "loading": "Cargando listas..."
+    "loading": "Cargando listas...",
+    "cards": {
+      "add": "+ Nueva tarea",
+      "create": "Nueva tarea",
+      "title": "Título",
+      "description": "Descripción",
+      "noCards": "No hay tareas"
+    }
   },
   "sticky": {
     "loading": "Cargando notas..."

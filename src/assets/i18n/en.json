@@ -22,10 +22,18 @@
     "amountNotes2":"notes created."
   },
   "table": {
+    "tableTitle":"Title...",
     "add": "Add list",
     "edit": "Edit list",
     "delete": "Delete list",
-    "loading": "Loading lists..."
+    "loading": "Loading lists...",
+    "cards":{
+      "add": "+ New task",
+      "create": "New task",
+      "title": "Title",
+      "description": "Description",
+      "noCards": "There is no cards"
+    }
   },
   "sticky": {
     "loading": "Loading notes..."

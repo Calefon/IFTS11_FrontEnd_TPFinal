@@ -2,11 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import ICardApi from '../../../models/card-api.model';
 import { CardApiService } from '../../../services/card-api.service';
 import { BotonCrearCardComponent } from '../boton-crear-card/boton-crear-card.component';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'card-component',
   templateUrl: './card.component.html',
-  imports: [BotonCrearCardComponent],
+  imports: [BotonCrearCardComponent, TranslocoModule],
 })
 export default class CardComponent implements OnInit {
   @Input() listId!: string;
